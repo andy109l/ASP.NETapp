@@ -1,0 +1,77 @@
+﻿@model IEnumerable<ASP.NETapp.Models.PersonalContact>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Personal Contacts</h1>
+
+<p>
+    <a asp-action="Create">Create New Contact</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonalFirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonalLastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonalEmail) 
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonalPhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonalAddressLine1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonalAddressLine2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonalPostcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonalCountry)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonalFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonalLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonalEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonalPhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonalAddressLine1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonalAddressLine2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonalPostcode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonalCountry)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PersonalContactId">Edit Contact</a> |
+                <a asp-action="Details" asp-route-id="@item.PersonalContactId">Contact Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PersonalContactId">Delete Contact</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\andri\\source\\repos\\ASP.NETapp\\ASP.NETapp\\ASP.NETapp.csproj": {}
+    "C:\\Users\\andri\\source\\repos\\New folder\\ASP.NETapp\\ASP.NETapp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\andri\\source\\repos\\ASP.NETapp\\ASP.NETapp\\ASP.NETapp.csproj": {
+    "C:\\Users\\andri\\source\\repos\\New folder\\ASP.NETapp\\ASP.NETapp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\andri\\source\\repos\\ASP.NETapp\\ASP.NETapp\\ASP.NETapp.csproj",
+        "projectUniqueName": "C:\\Users\\andri\\source\\repos\\New folder\\ASP.NETapp\\ASP.NETapp.csproj",
         "projectName": "ASP.NETapp",
-        "projectPath": "C:\\Users\\andri\\source\\repos\\ASP.NETapp\\ASP.NETapp\\ASP.NETapp.csproj",
+        "projectPath": "C:\\Users\\andri\\source\\repos\\New folder\\ASP.NETapp\\ASP.NETapp.csproj",
         "packagesPath": "C:\\Users\\andri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\andri\\source\\repos\\ASP.NETapp\\ASP.NETapp\\obj\\",
+        "outputPath": "C:\\Users\\andri\\source\\repos\\New folder\\ASP.NETapp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -41,6 +41,30 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
