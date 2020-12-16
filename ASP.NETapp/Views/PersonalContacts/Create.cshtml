@@ -1,0 +1,68 @@
+﻿@model ASP.NETapp.Models.PersonalContact
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Personal Contact</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PersonalFirstName" class="control-label">First Name</label>
+                <input asp-for="PersonalFirstName" class="form-control" />
+                <span asp-validation-for="PersonalFirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonalLastName" class="control-label"></label>
+                <input asp-for="PersonalLastName" class="form-control" />
+                <span asp-validation-for="PersonalLastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonalEmail" class="control-label"></label>
+                <input asp-for="PersonalEmail" class="form-control" />
+                <span asp-validation-for="PersonalEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonalPhoneNumber" class="control-label"></label>
+                <input asp-for="PersonalPhoneNumber" class="form-control" />
+                <span asp-validation-for="PersonalPhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonalAddressLine1" class="control-label"></label>
+                <input asp-for="PersonalAddressLine1" class="form-control" />
+                <span asp-validation-for="PersonalAddressLine1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonalAddressLine2" class="control-label"></label>
+                <input asp-for="PersonalAddressLine2" class="form-control" />
+                <span asp-validation-for="PersonalAddressLine2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonalPostcode" class="control-label"></label>
+                <input asp-for="PersonalPostcode" class="form-control" />
+                <span asp-validation-for="PersonalPostcode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonalCountry" class="control-label"></label>
+                <input asp-for="PersonalCountry" class="form-control" />
+                <span asp-validation-for="PersonalCountry" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
