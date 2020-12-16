@@ -9,6 +9,10 @@ namespace ASP.NETapp.Data
 {
     public class AspNetAppDbContext : DbContext
     {
+        /// <summary>
+        /// Puts together all of the models so they could be used in the database
+        /// </summary>
+        /// <param name="options"></param>
         public AspNetAppDbContext(DbContextOptions<AspNetAppDbContext> options) : base(options)
         {
         }

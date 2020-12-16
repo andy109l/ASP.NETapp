@@ -19,13 +19,20 @@ namespace ASP.NETapp.Controllers
             _context = context;
         }
 
-        // GET: BusinessContacts
+        /// <summary>
+        /// displays business contact list
+        /// </summary>
+        /// <returns></returns>
         public async Task<IActionResult> Index()
         {
             return View(await _context.BusinessContacts.ToListAsync());
         }
 
-        // GET: BusinessContacts/Details/5
+        /// <summary>
+        /// displays business contact details based on the id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -43,7 +50,10 @@ namespace ASP.NETapp.Controllers
             return View(businessContact);
         }
 
-        // GET: BusinessContacts/Create
+        /// <summary>
+        /// displays the create new business contact form
+        /// </summary>
+        /// <returns></returns>
         public IActionResult Create()
         {
             return View();
@@ -52,6 +62,12 @@ namespace ASP.NETapp.Controllers
         // POST: BusinessContacts/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
+        /// <summary>
+        /// store new personal contact in database
+        /// </summary>
+        /// <param name="businessContact"></param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("BusinessContactId,BusinessFirstName,BusinessLastName,BusinessEmail,BusinessPhoneNumber,BusinessAddressLine1,BusinessAddressLine2,BusinessPostcode,BusinessCountry,BusinessCompany")] BusinessContact businessContact)
@@ -65,7 +81,11 @@ namespace ASP.NETapp.Controllers
             return View(businessContact);
         }
 
-        // GET: BusinessContacts/Edit/5
+        /// <summary>
+        /// displays the edit business contact form
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -84,6 +104,13 @@ namespace ASP.NETapp.Controllers
         // POST: BusinessContacts/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
+        /// <summary>
+        /// edit and store business contact in database based on id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="businessContact"></param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("BusinessContactId,BusinessFirstName,BusinessLastName,BusinessEmail,BusinessPhoneNumber,BusinessAddressLine1,BusinessAddressLine2,BusinessPostcode,BusinessCountry,BusinessCompany")] BusinessContact businessContact)
@@ -116,7 +143,11 @@ namespace ASP.NETapp.Controllers
             return View(businessContact);
         }
 
-        // GET: BusinessContacts/Delete/5
+        /// <summary>
+        /// displays the delete business contact form
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -134,7 +165,11 @@ namespace ASP.NETapp.Controllers
             return View(businessContact);
         }
 
-        // POST: BusinessContacts/Delete/5
+        /// <summary>
+        /// deletes business contact from the database based on id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

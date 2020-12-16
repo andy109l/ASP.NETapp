@@ -13,6 +13,10 @@ namespace ASP.NETapp
 {
     public class Program
     {
+        /// <summary>
+        /// initializes the program, acquired personal and business models parameters for the database
+        /// </summary>
+        /// <param name="args"></param>
         public static void Main(string[] args)
         {
             var host = CreateHostBuilder(args).Build();

@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace ASP.NETapp.Models
 {
+    /// <summary>
+    /// /// model associated with personal contact table
+    /// </summary>
     public class PersonalContact
     {
         public int PersonalContactId { get; set; }

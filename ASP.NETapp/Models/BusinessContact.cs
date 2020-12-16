@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace ASP.NETapp.Models
 {
+    /// <summary>
+    /// model associated with business contact table
+    /// </summary>
     public class BusinessContact
     {
         public int BusinessContactId { get; set; }

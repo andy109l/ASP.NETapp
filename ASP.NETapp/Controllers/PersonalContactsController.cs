@@ -19,13 +19,20 @@ namespace ASP.NETapp.Controllers
             _context = context;
         }
 
-        // GET: PersonalContacts
+        /// <summary>
+        /// displays personal contact list
+        /// </summary>
+        /// <returns></returns>
         public async Task<IActionResult> Index()
         {
             return View(await _context.PersonalContacts.ToListAsync());
         }
 
-        // GET: PersonalContacts/Details/5
+        /// <summary>
+        /// displays personal contact details based on the id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -43,7 +50,10 @@ namespace ASP.NETapp.Controllers
             return View(personalContact);
         }
 
-        // GET: PersonalContacts/Create
+        /// <summary>
+        /// displays the create new personal contact form
+        /// </summary>
+        /// <returns></returns>
         public IActionResult Create()
         {
             return View();
@@ -52,6 +62,12 @@ namespace ASP.NETapp.Controllers
         // POST: PersonalContacts/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
+        /// <summary>
+        /// store new personal contact in database
+        /// </summary>
+        /// <param name="personalContact"></param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("PersonalContactId,PersonalFirstName,PersonalLastName,PersonalEmail,PersonalPhoneNumber,PersonalAddressLine1,PersonalAddressLine2,PersonalPostcode,PersonalCountry")] PersonalContact personalContact)
@@ -65,7 +81,11 @@ namespace ASP.NETapp.Controllers
             return View(personalContact);
         }
 
-        // GET: PersonalContacts/Edit/5
+        /// <summary>
+        /// displays the edit personal contact form
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -84,6 +104,13 @@ namespace ASP.NETapp.Controllers
         // POST: PersonalContacts/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
+        /// <summary>
+        /// edit and store personal contact in database based on id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="personalContact"></param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("PersonalContactId,PersonalFirstName,PersonalLastName,PersonalEmail,PersonalPhoneNumber,PersonalAddressLine1,PersonalAddressLine2,PersonalPostcode,PersonalCountry")] PersonalContact personalContact)
@@ -116,7 +143,11 @@ namespace ASP.NETapp.Controllers
             return View(personalContact);
         }
 
-        // GET: PersonalContacts/Delete/5
+        /// <summary>
+        /// displays the delete personal contact form
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -134,7 +165,11 @@ namespace ASP.NETapp.Controllers
             return View(personalContact);
         }
 
-        // POST: PersonalContacts/Delete/5
+        /// <summary>
+        /// deletes personal contact from the database based on id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
